@@ -19,17 +19,20 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.GradeName)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.GradeId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.GradeId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.GradeId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GradeName)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.GradeId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.GradeId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.GradeId">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
+<a asp-controller="Home" asp-action="Index">Home</a>

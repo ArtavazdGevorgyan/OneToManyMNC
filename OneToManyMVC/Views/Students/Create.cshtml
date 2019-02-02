@@ -10,7 +10,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
+        <form asp-action="Create" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="StudentName" class="control-label"></label>
@@ -19,11 +19,13 @@
             </div>
             <div class="form-group">
                 <label asp-for="CurrentGradeID" class="control-label"></label>
-                <select asp-for="CurrentGradeID" class ="form-control" asp-items="ViewBag.CurrentGradeID"></select>
+                <select asp-for="CurrentGradeID" asp-items="(SelectList)@ViewData["selectlist"]"></select>
+                <span asp-validation-for="Grade" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="CurrentAmbionID" class="control-label"></label>
-                <select asp-for="CurrentAmbionID" class ="form-control" asp-items="ViewBag.CurrentAmbionID"></select>
+                <select asp-for="CurrentAmbionID" asp-items="(SelectList)@ViewData["selectlist2"]"></select>
+                <span asp-validation-for="Ambion" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
